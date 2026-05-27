@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="49.304" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Navia Online Trading Market Login" name="Login Navia" time="49.098">
+<system-out><![CDATA[
+Given User Navigate to Navia................................................passed
+When User Click login with client code......................................passed
+And User Enter Client Code..................................................passed
+And User  Enter Password....................................................passed
+And User Click Agree CheckBox...............................................passed
+And User Click Login button.................................................passed
+And User Click Otp Verification and enter manualy...........................passed
+And User Click Login Again..................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
