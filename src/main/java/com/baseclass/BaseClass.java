@@ -37,13 +37,13 @@ public class BaseClass {
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
-            System.out.println("Running in Headless Mode");
-
-            options.addArguments("--headless=new");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-     
-            options.addArguments("--window-size=1920,1080");
+//            System.out.println("Running in Headless Mode");
+//
+//            options.addArguments("--headless=new");
+//            options.addArguments("--no-sandbox");
+//            options.addArguments("--disable-dev-shm-usage");
+//     
+//            options.addArguments("--window-size=1920,1080");
 
             options.addArguments("--disable-extensions");
             

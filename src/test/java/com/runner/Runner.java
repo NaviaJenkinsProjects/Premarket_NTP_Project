@@ -11,7 +11,10 @@ import com.baseclass.BaseClass;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+		
     features = "src/test/java/com/feature/DailyEightFortyTesting.feature",
+    
+    
     glue = {"com.stepdefinition"},
     plugin = {
         "pretty",
@@ -31,6 +34,6 @@ public class Runner {
 
     @AfterClass
     public static void afterSuite() {
-       BaseClass.quitBrowser();
+      // BaseClass.quitBrowser();
     }
 }

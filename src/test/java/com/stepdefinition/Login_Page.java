@@ -71,7 +71,7 @@ public class Login_Page extends BaseClass {
         String naviaWindow = driver.getWindowHandle();
 
         // STEP 5: Wait for OTP email to arrive
-        Thread.sleep(15000);
+        Thread.sleep(20000);
 
         // STEP 6: Open YopMail in a new tab so the requested OTP stays bound
         // to the current Navia login page.
@@ -225,6 +225,7 @@ public class Login_Page extends BaseClass {
 	@When("User Click Login Again")
 	public void user_click_login_again() throws InterruptedException {
 
+		driver.manage().window().maximize();
 	Thread.sleep(2000);
 		//clickOnElement(l.getLoginAfterOTP());
 //		setImplicitWait(24);
@@ -260,7 +261,7 @@ public class Login_Page extends BaseClass {
 	}
 
 
-	driver.manage().window().maximize();
+	
 	Thread.sleep(2000);
 	
 	try {
@@ -296,7 +297,7 @@ public class Login_Page extends BaseClass {
 	
 	
 	
-	
+	//driver.manage().window().maximize();
 	
 
 	}
