@@ -10,6 +10,41 @@ Scenario: Login Navia
     And User Click Otp Verification and enter manualy
     And User Click Login Again
     
+    
+        Scenario: Verify Bondss
+
+    When Navigate to home page
+    And User MouseOver Dashboard and Click Tools  
+    And user Mouse Over The Element 
+    And User Click Tools "Bonds"   
+    And User Select The Bonds and close the window
+    
+    Scenario: Verify Stock Advisory
+
+    When Navigate to home page
+    And User MouseOver Dashboard and Click Tools  
+    And user Mouse Over The Element 
+    And User Click Tools "Stock Advisory"   
+    And User Select The Stock Advisory and close the window
+    
+    Scenario: Verify Portfolio Health Check
+
+    When Navigate to home page
+    And User MouseOver Dashboard and Click Tools  
+    And user Mouse Over The Element 
+    And User Click Tools "Portfolio Health Check"   
+    And User Select The Portfolio Health Check and close the window
+    
+    Scenario: Verify Corporate FDs
+
+    When Navigate to home page
+    And User MouseOver Dashboard and Click Tools  
+    And user Mouse Over The Element 
+    And User Click Tools "Corporate FDs"   
+    And User Select The Corporate FDs and close the window
+    
+
+    
      Scenario: Verify InstaOptions
 
     When Navigate to home page
@@ -18,7 +53,6 @@ Scenario: Login Navia
     And User Click Tools "InstaOptions" 
     And User Select The InstaOptions and close the window
     
-
     
 Scenario: Verify Ban List
     

@@ -153,7 +153,7 @@ public class Login_Page extends BaseClass {
         // STEP 11: Wait for home page — increased to 90s for headless slow render
         // Added more fallback XPaths in case primary ones aren't present on web.navia.co.in
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(90)).until(
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(
                 ExpectedConditions.or(
                     ExpectedConditions.visibilityOfElementLocated(
                         By.xpath("//label[text()='Dashboard']")),

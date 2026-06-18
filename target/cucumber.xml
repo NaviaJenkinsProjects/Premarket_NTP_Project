@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="210.435" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Navia Online Trading Market Login" name="Login Navia" time="61.062">
+<testsuite name="Cucumber" time="870.106" tests="9" skipped="0" failures="1" errors="0">
+<testcase classname="Navia Online Trading Market Login" name="Login Navia" time="255.772">
 <system-out><![CDATA[
 Given User Navigate to Navia................................................passed
 When User Click login with client code......................................passed
@@ -12,7 +12,7 @@ And User Click Otp Verification and enter manualy...........................pass
 And User Click Login Again..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Navia Online Trading Market Login" name="AMO Orders All Stock and Featue &amp; Options" time="147.234">
+<testcase classname="Navia Online Trading Market Login" name="AMO Orders All Stock and Featue &amp; Options" time="160.616">
 <system-out><![CDATA[
 When Navigate to home page..................................................passed
 And User Click The "Test" Market watchlist..................................passed
@@ -20,6 +20,106 @@ And User Check The Current Stock to Market WatchList........................pass
 And User Click The "buy" Options in Market WatchList........................passed
 And User Modify The AMO Order...............................................passed
 And User All Type to Cancel The All AMO Orders..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="Add and Remove Any Script and Verify" time="55.903">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User click the search box...............................................passed
+And User Search any "SWIGGY-EQ" Script......................................passed
+And User Mouse Over and Add a Script "SWIGGY-EQ"............................passed
+And User POP Up Message Appear Verify POP UP................................passed
+And User Remove The "SWIGGY-EQ" Stock.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="Payin add money in navia" time="35.931">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User Click The Withdraw button..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="Payin add money in navia" time="121.539">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User Click Add Money....................................................passed
+And User enter money in amount to add.......................................passed
+And User Choose Pay Using UPI...............................................passed
+And User Enter UPI/ID/Mobile Number and click pay now.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="User Check The Mutual Fund -  UPI Payment - functionality" time="37.564">
+<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;input type=&quot;text&quot; placeholder=&quot;Search&quot; aria-label=&quot;Type or select value&quot; class=&quot;dhx_combobox-input&quot; style=&quot;opacity: 0;&quot;&gt; is not clickable at point (1679, 25). Other element would receive the click: &lt;div aria-label=&quot;tab-content-content&quot; data-cell-id=&quot;content&quot; class=&quot;dhx_layout-cell dhx_window-content-without-header&quot; style=&quot;flex: 1 1 auto;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=149.0.7827.103)
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b84a75b9dc2d916251c1cad77a28f69b, clickElement {id=f.FABD671115D34CC1F6D7CBD727AC86ED.d.E282AABE8412BDC55739FB2402FE99BD.e.3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\CommonPC\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56177}, goog:processID: 20296, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56177/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b84a75b9dc2d916251c1cad77a28f69b)] -&gt; xpath: //input[@placeholder='Search']]
+Session ID: b84a75b9dc2d916251c1cad77a28f69b">
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="text" placeholder="Search" aria-label="Type or select value" class="dhx_combobox-input" style="opacity: 0;"> is not clickable at point (1679, 25). Other element would receive the click: <div aria-label="tab-content-content" data-cell-id="content" class="dhx_layout-cell dhx_window-content-without-header" style="flex: 1 1 auto;">...</div>
+  (Session info: chrome=149.0.7827.103)
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b84a75b9dc2d916251c1cad77a28f69b, clickElement {id=f.FABD671115D34CC1F6D7CBD727AC86ED.d.E282AABE8412BDC55739FB2402FE99BD.e.3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\CommonPC\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56177}, goog:processID: 20296, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56177/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b84a75b9dc2d916251c1cad77a28f69b)] -> xpath: //input[@placeholder='Search']]
+Session ID: b84a75b9dc2d916251c1cad77a28f69b
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at com.stepdefinition.Login.user_search_in_serach_box_and_enter(Login.java:2117)
+	at ✽.User Search "Navi Flexi Cap Fund Direct Plan Growth" in Serach Box and enter(file:///D:/bk/Premarket_NTP_Project-main/src/test/java/com/feature/DailyEightFortyTesting.feature:55)
+]]>
+</failure>
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User MouseOver Dashboard and Click Mutual Funds.........................passed
+And User Click Explore......................................................passed
+And User Search "Navi Flexi Cap Fund Direct Plan Growth" in Serach Box and enter.failed
+And User Click One Time , enter amount "100" and click pay now..............skipped
+And User Click enter UPI ID "6374837965@ptsbi" and Click Pay Via UPI........skipped
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="Verify the Charts Changes in Different Minutes and Days" time="71.331">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User Click the Watch List...............................................passed
+And User Select scrip "S&P BSE SENSEX"......................................passed
+And User Click Watch List Again.............................................passed
+And User mouse over the scrip "NIFTY 50"....................................passed
+And User Click the Candles Icon.............................................passed
+And User Choose Candle "candle".............................................passed
+And User Check the one Minute and one Day Chart.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="Verify the Charts Changes in Different Minutes and Days" time="70.238">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User Click the Watch List...............................................passed
+And User Select scrip "S&P BSE SENSEX"......................................passed
+And User Click Watch List Again.............................................passed
+And User mouse over the scrip "S&P BSE SENSEX"..............................passed
+And User Click the Candles Icon.............................................passed
+And User Choose Candle "candle".............................................passed
+And User Check the one Minute and one Day Chart.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Navia Online Trading Market Login" name="Verify the Charts Changes in Different Minutes and Days" time="52.883">
+<system-out><![CDATA[
+When Navigate to home page..................................................passed
+And User Select The "ICICIBANK-A" Stock or F&O to Chart.....................passed
+And User Select The "HDFCBANK-EQ" Stock or F&O to Chart.....................passed
 ]]></system-out>
 </testcase>
 </testsuite>

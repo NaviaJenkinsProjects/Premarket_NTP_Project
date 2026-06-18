@@ -2831,6 +2831,158 @@ System.out.println("SELL Margin Value : "+sell);
 		
 	}
 	
+	@When("User Select The Stock Advisory and close the window")
+	public void user_select_the_stock_advisory_and_close_the_window() throws InterruptedException {
+	   
+		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		try {
+			
+			 Set<String> windowHandles = driver.getWindowHandles();
+		        ArrayList<String> tabs = new ArrayList<>(windowHandles);
+		        
+		        driver.switchTo().window(tabs.get(1));
+		        Thread.sleep(2000);  // Perform actions if needed
+
+			
+			WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Proceed')]//parent::button"));
+			element.click();
+			
+			Thread.sleep(4000);
+			driver.close();
+			
+			 driver.switchTo().window(tabs.get(0));
+			
+		} catch (Exception e) {
+			
+			 Set<String> windowHandles = driver.getWindowHandles();
+		        ArrayList<String> tabs = new ArrayList<>(windowHandles);
+		        
+		        driver.switchTo().window(tabs.get(1));
+		        Thread.sleep(4000);  // Perform actions if needed
+		        
+		        driver.close();
+		        
+		        driver.switchTo().window(tabs.get(0));
+		}
+		
+		
+		Thread.sleep(1000);
+		
+	}
+
+	
+	@When("User Select The Portfolio Health Check and close the window")
+	public void user_select_the_portfolio_health_check_and_close_the_window() throws InterruptedException {
+	    
+		
+		
+		
+		
+	}
+	
+	@When("User Select The Corporate FDs and close the window")
+	public void user_select_the_corporate_f_ds_and_close_the_window() throws InterruptedException {
+	    
+		  
+				Thread.sleep(1000);
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+				
+				try {
+					
+					 Set<String> windowHandles = driver.getWindowHandles();
+				        ArrayList<String> tabs = new ArrayList<>(windowHandles);
+				        
+				        driver.switchTo().window(tabs.get(1));
+				        Thread.sleep(2000);  // Perform actions if needed
+
+				    	WebElement element = driver.findElement(By.xpath("//button[contains(text(),'Proceed')]"));
+						element.click();
+				       
+				        try {
+				            new WebDriverWait(driver, Duration.ofSeconds(20)).until(
+				                ExpectedConditions.or(
+				                    ExpectedConditions.visibilityOfElementLocated(
+				                        By.xpath("//button[contains(@aria-label,'home')]")),
+				                    ExpectedConditions.visibilityOfElementLocated(
+				                        By.xpath("//button[contains(text(),'Clear')]")),
+				                    ExpectedConditions.visibilityOfElementLocated(
+				                        By.xpath("//button[contains(text(),'FAQ')]"))
+				                 
+				                ));
+				            System.out.println("Page successful - loaded.");
+				        } catch (Exception e) {
+				            throw new AssertionError("Page Not Loading so Kindly check Manual.", e);
+				        }
+					
+					Thread.sleep(4000);
+					driver.close();
+					
+					 driver.switchTo().window(tabs.get(0));
+					
+				} catch (Exception e) {
+					
+					
+				}
+				
+				
+				Thread.sleep(1000);
+				
+				
+	}
+
+	@When("User Select The Bonds and close the window")
+	public void user_select_the_bonds_and_close_the_window() throws InterruptedException {
+	    
+		Thread.sleep(1000);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		try {
+		
+		       
+		        Thread.sleep(2000);  // Perform actions if needed
+
+		    	WebElement element = driver.findElement(By.xpath("//div[contains(text(),'Confirm')]"));
+				element.click();
+		       
+				 Thread.sleep(4000);
+				framesHandlingNaviaLogin();
+		        try {
+		            new WebDriverWait(driver, Duration.ofSeconds(40)).until(
+		            		
+		            		
+		            	
+		                ExpectedConditions.or(
+		                    ExpectedConditions.visibilityOfElementLocated(
+		                        By.xpath("//div[@class='header-menu-wrap']")),
+		                    ExpectedConditions.visibilityOfElementLocated(
+		                        By.xpath("//div[@class='sidebar-widget']")),
+		                    ExpectedConditions.visibilityOfElementLocated(
+		                        By.xpath("//a[@class='user-icon']"))
+		                 
+		                ));
+		            System.out.println("Page successful - loaded.");
+		        } catch (Exception e) {
+		            throw new AssertionError("Page Not Loading so Kindly check Manual.", e);
+		        }
+			
+			Thread.sleep(4000);
+			
+			
+		} catch (Exception e) {
+			
+			
+			
+		}
+		
+		driver.switchTo().defaultContent();
+		Thread.sleep(1000);
+		
+	}
+
+	
+	
 	
 	@When("User Open The Current {string} Stike")
 	public void user_open_the_current_stike(String string) throws InterruptedException, AWTException {

@@ -759,9 +759,42 @@ public class Login extends BaseClass {
 		enterAmount.clear();
 		Thread.sleep(1000);
 
-		enterAmount.sendKeys("50");
+		enterAmount.sendKeys("10");
 
 		Thread.sleep(1000);
+		
+		try {
+			
+			WebElement element = driver.findElement(By.xpath("//span[@class='form-error erspan is-visible']"));
+			
+			if (element.isDisplayed()) {
+				
+				
+				
+				System.out.println("Add Funds Is Working");
+				Thread.sleep(1000);
+				//WebElement enterAmount = driver.findElement(By.xpath("//input[@placeholder='Enter Amount']"));
+				enterAmount.clear();
+				Thread.sleep(1000);
+
+				enterAmount.sendKeys("50");
+				
+			}
+			
+			else {
+				
+				
+				System.err.println("Not Showing The Amount should be greater than 50 rupees");
+				
+			}
+			
+		} catch (Exception e) {
+			
+			WebElement element = driver.findElement(By.xpath("//span[@class='form-error erspan is-visible']"));
+			String text = element.getText();
+			System.out.println(text);
+		}
+		
 
 		driver.findElement(By.xpath("//input[@id='deposit_amount']")).click();
 		Thread.sleep(2000);
@@ -794,7 +827,7 @@ public class Login extends BaseClass {
 
 	@When("User Enter UPI\\/ID\\/Mobile Number and click pay now")
 	public void user_enter_upi_id_mobile_number_and_click_pay_now() throws InterruptedException, AWTException {
-		driver.switchTo().frame(0);
+		//driver.switchTo().frame(0);
 
 		//Robot robot = new Robot();
 
@@ -805,31 +838,30 @@ public class Login extends BaseClass {
 		js.executeScript("window.scrollBy(0, 500)");
 		js.executeScript("window.scrollBy(0, -500)");
 
-		WebElement netBanking = driver.findElement(By.xpath("//input[@placeholder='example@okhdfcbank']"));
+		WebElement netBanking = driver.findElement(By.xpath("//p[text()='Enter Any UPI ID']"));
 
 		netBanking.click();
 		Thread.sleep(1000);
 
-		WebElement UPI = driver.findElement(By.xpath("//input[@placeholder='example@okhdfcbank']"));
-
-		UPI.sendKeys("6374837965");
+		WebElement UPI = driver.findElement(By.xpath("//input[@placeholder='Enter UPI ID']"));
+		UPI.click();
+		UPI.sendKeys("6374837965@ptsbi");
 		Thread.sleep(1000);
 
-		WebElement clickPayUsingUPI = driver.findElement(By.xpath("//button[text()='Verify and Pay']"));
+		WebElement clickPayUsingUPI = driver.findElement(By.xpath("//button[text()='Apply']"));
 		clickPayUsingUPI.click();
 
 		Thread.sleep(3000);
 
 		
-		WebElement clickPayUsingUPI1 = driver.findElement(By.xpath("//button[text()='Cancel Payment']"));
+		WebElement clickPayUsingUPI1 = driver.findElement(By.xpath("//span[text()='PROCEED']//parent::button"));
 		clickPayUsingUPI1.click();
 		
-		WebElement clickPayUsingUPI11 = driver.findElement(By.xpath("//button[@data-testid='confirm-positive']"));
-		clickPayUsingUPI11.click();
+		Thread.sleep(7000);
 		
 		
-		WebDriverWait wait1 = new WebDriverWait(driver, java.time.Duration.ofMinutes(1));
-		WebElement rejectedMessage = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Payment could not be completed']")));
+		WebDriverWait wait1 = new WebDriverWait(driver, java.time.Duration.ofMinutes(30));
+		WebElement rejectedMessage = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='CHECK PAYMENT STATUS']")));
 	//	WebElement rejectedMessage = driver.findElement(By.xpath("//div[text()='Payment could not be completed']"));
 
 		if (rejectedMessage.isDisplayed()) {
@@ -843,9 +875,15 @@ public class Login extends BaseClass {
 			System.err.println("Payment SuccessFul");
 		}
 
-		driver.switchTo().parentFrame();
+		
+		driver.close();
+		Set<String> windowHandles1 = driver.getWindowHandles();
+		ArrayList<String> li1 = new ArrayList<String>(windowHandles1);
 
-		driver.switchTo().defaultContent();
+		driver.switchTo().window(li1.get(0));
+		//driver.switchTo().parentFrame();
+
+		//driver.switchTo().defaultContent();
 
 	}
 
@@ -1060,9 +1098,20 @@ public class Login extends BaseClass {
 
 		ac.moveToElement(dashBoard).perform();
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		
+		try {
+			
+			driver.findElement(By.xpath("//label[text()='Tools']//ancestor::li")).click();
+			
+		} catch (Exception e) {
+			
+			WebElement element = driver.findElement(By.xpath("//label[text()='Tools']//ancestor::li"));
+			element.click();
+			
+		}
 
-		driver.findElement(By.xpath("//label[text()='Tools']//ancestor::li")).click();
+		Thread.sleep(2000);
 
 	}
 
@@ -1618,7 +1667,17 @@ public class Login extends BaseClass {
 		ac.moveToElement(element).perform();
 
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@class='menu_item']//descendant::h4[text()='"+string+"']")).click();
+		
+		try {
+			
+			driver.findElement(By.xpath("//div[@class='menu_item']//descendant::h4[text()='"+string+"']")).click();
+			
+		} catch (Exception e) {
+			
+			
+			driver.findElement(By.xpath("(//div[@class='menu_item']//descendant::h4[text()='"+string+"'])[2]")).click();
+		}
+		
 
 	}
 

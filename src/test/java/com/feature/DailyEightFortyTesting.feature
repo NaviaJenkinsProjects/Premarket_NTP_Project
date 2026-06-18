@@ -92,14 +92,3 @@ Scenario: Verify the Charts Changes in Different Minutes and Days
 
     
 
-
-    
-    
-
-    
-
-
-        
-
-    
-
