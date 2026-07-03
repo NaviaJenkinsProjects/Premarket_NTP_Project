@@ -10,58 +10,15 @@ Scenario: Login Navia
     And User Click Otp Verification and enter manualy
     And User Click Login Again
     
-Scenario: User Check  - Charts- functionality    
-    When Navigate to home page
-    And User Click the Watch List
-    And User Select scrip "S&P BSE SENSEX"
-    And User Click Watch List Again
-    And User mouse over the scrip "NIFTY 50"
-    And User Click the Charts
-    And User Click the Candles Icon
-    And User Choose Candle "candle"
-    And User Click the Mintues
-    And User Choose One Minute
-    And Verify One Minute Feed Connection Value and Wait One Minute Very Feed Connection Changes
-    And User Click the Five Minute
-    And Verify Five Minute Feed Connection Valuebb
-    And User Click One Day 
-    And Verify One Day Feed Connection Value and Wait One Minute Very Feed Connection Changes
-    
-Scenario: Payin add money in navia
 
-    When Navigate to home page
-    And User Click The Withdraw button 
-    
-    When Navigate to home page
-    And User Click Add Money
-    And User enter money in amount to add
-    And User Choose Pay Using UPI
-    And User Enter UPI/ID/Mobile Number and click pay now
-    
-Scenario: User Check  - POP UP- functionality    
-    When Navigate to home page
-    And User click the search box
-    And User Search any "HDFCBANK" Script
-    And User Mouse Over and Add a Script
-    And User POP Up Message Appear Verify POP UP
-    
-Scenario: Add and Remove Any Script and Verify
-    When Navigate to home page
-    And User click the search box
-    And User Search any "SWIGGY-EQ" Script
-    And User Mouse Over and Add a Script "SWIGGY-EQ"
-    And User POP Up Message Appear Verify POP UP
-    When Navigate to home page
-    And User Remove The "SWIGGY-EQ" Stock    
-    
 Scenario: User Check  - F&O- functionality     
     When Navigate to home page
-    When User Search "Banknifty" in Searchbox
+    When User Search "NIFTY" in Searchbox
     And User Click Futures
-    And User mouse over "BANKNIFTY" and click add icon
+    And User mouse over "NIFTY" and click add icon
     And Symbol Has been Added Successfully Notification Shown
     And User Click Clear in search box
-    And User Click "BANKNIFTY"
+    And User Click "NIFTY"
     And User Click F&O
     And User Click Cancel button in Ready Made Pop up
     And User Click LTP
@@ -69,12 +26,12 @@ Scenario: User Check  - F&O- functionality
     
 Scenario: User Check  - Save Strategy- functionality     
     When Navigate to home page 
-    When User Search "Banknifty" in Searchbox
+    When User Search "NIFTY" in Searchbox
     And User Click Futures
-    And User mouse over "BANKNIFTY" and click add icon
+    And User mouse over "NIFTY" and click add icon
     And Symbol Has been Added Successfully Notification Shown
     And User Click Clear in search box
-    And User Click "BANKNIFTY"
+    And User Click "NIFTY"
     And User Click F&O
     And User Click Cancel button in Ready Made Pop up
     And User Click LTP
@@ -88,12 +45,12 @@ Scenario: User Check  - Save Strategy- functionality
     
  Scenario: User Check  - Ready Made- functionality    
     When Navigate to home page 
-    When User Search "Banknifty" in Searchbox
+    When User Search "NIFTY" in Searchbox
     And User Click Futures
-    And User mouse over "BANKNIFTY" and click add icon
+    And User mouse over "NIFTY" and click add icon
     And Symbol Has been Added Successfully Notification Shown
     And User Click Clear in search box
-    And User Click "BANKNIFTY"
+    And User Click "NIFTY"
     And User Click F&O
     And User Click Cancel button in Ready Made Pop up
     And User Click LTP

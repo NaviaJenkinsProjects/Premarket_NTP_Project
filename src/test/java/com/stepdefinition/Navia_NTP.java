@@ -874,7 +874,7 @@ public class Navia_NTP extends BaseClass{
 		
 		
 		if (day.equals("Monday")) {
-			
+			//if (day.equals(true)) {	
 			try {
 				
 				List<WebElement> elements = driver.findElements(By.xpath("//div[@class='tabs-panel is-active']/div/div/ul/li/div/div/span[@class='symbolsseries']"));
@@ -1798,10 +1798,21 @@ Thread.sleep(2000);
 					Thread.sleep(1000);   
 					
 					JavascriptExecutor j1 = (JavascriptExecutor) driver;
+					
+					try {
+						
+						driver.findElement(By.xpath("(//span[text()='Modify'])[1]")).click();
+						
+					} catch (Exception e2) {
+						
+						driver.switchTo().defaultContent();
+						WebElement elemet21 = driver.findElement(By.xpath("(//span[text()='Modify'])[1]"));
+						g.moveToElement(elemet21).doubleClick().perform();
+						
+						
+					}
 				
-				WebElement elemet21 = driver.findElement(By.xpath("(//span[text()='Modify'])[1]"));
-				g.moveToElement(elemet21).perform();
-				g.click(elemet21).perform();
+				
 			      
 			      Thread.sleep(1000);  
 					WebElement element2 = driver.findElement(By.xpath("//div[@class='pop-chart-cont']//descendant::span[@class='sys_vl']"));

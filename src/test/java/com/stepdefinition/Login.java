@@ -827,7 +827,7 @@ public class Login extends BaseClass {
 
 	@When("User Enter UPI\\/ID\\/Mobile Number and click pay now")
 	public void user_enter_upi_id_mobile_number_and_click_pay_now() throws InterruptedException, AWTException {
-		//driver.switchTo().frame(0);
+		
 
 		//Robot robot = new Robot();
 
@@ -838,30 +838,67 @@ public class Login extends BaseClass {
 		js.executeScript("window.scrollBy(0, 500)");
 		js.executeScript("window.scrollBy(0, -500)");
 
-		WebElement netBanking = driver.findElement(By.xpath("//p[text()='Enter Any UPI ID']"));
-
-		netBanking.click();
+//		WebElement netBanking = driver.findElement(By.xpath("//p[text()='Enter Any UPI ID']"));
+//
+//		netBanking.click();
+//		Thread.sleep(1000);
+//
+//		WebElement UPI = driver.findElement(By.xpath("//input[@placeholder='Enter UPI ID']"));
+//		UPI.click();
+//		UPI.sendKeys("6374837965@ptsbi");
+//		Thread.sleep(1000);
+//
+//		WebElement clickPayUsingUPI = driver.findElement(By.xpath("//button[text()='Apply']"));
+//		clickPayUsingUPI.click();
+//
+//		Thread.sleep(3000);
+//
+//		
+//		WebElement clickPayUsingUPI1 = driver.findElement(By.xpath("//span[text()='PROCEED']//parent::button"));
+//		clickPayUsingUPI1.click();
+//		
+//		Thread.sleep(7000);
+//		
+//		
+//		WebDriverWait wait1 = new WebDriverWait(driver, java.time.Duration.ofMinutes(30));
+//		WebElement rejectedMessage = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='CHECK PAYMENT STATUS']")));
+//	//	WebElement rejectedMessage = driver.findElement(By.xpath("//div[text()='Payment could not be completed']"));
+//
+//		if (rejectedMessage.isDisplayed()) {
+//			js.executeScript("arguments[0].style.border='2px solid yellow'", rejectedMessage);
+//			System.err.println("Payment Declined");
+//
+//		}
+//
+//		else {
+//			js.executeScript("arguments[0].style.border='2px solid red'", rejectedMessage);
+//			System.err.println("Payment SuccessFul");
+//		}
+		
+		driver.switchTo().frame(0);
+	
 		Thread.sleep(1000);
 
-		WebElement UPI = driver.findElement(By.xpath("//input[@placeholder='Enter UPI ID']"));
-		UPI.click();
-		UPI.sendKeys("6374837965@ptsbi");
+		WebElement UPI = driver.findElement(By.xpath("//input[@placeholder='example@okhdfcbank']"));
+
+		UPI.sendKeys("6374837965");
 		Thread.sleep(1000);
 
-		WebElement clickPayUsingUPI = driver.findElement(By.xpath("//button[text()='Apply']"));
+		WebElement clickPayUsingUPI = driver.findElement(By.xpath("//button[text()='Verify and Pay']"));
 		clickPayUsingUPI.click();
 
 		Thread.sleep(3000);
 
 		
-		WebElement clickPayUsingUPI1 = driver.findElement(By.xpath("//span[text()='PROCEED']//parent::button"));
+		WebElement clickPayUsingUPI1 = driver.findElement(By.xpath("//button[text()='Cancel Payment']"));
 		clickPayUsingUPI1.click();
 		
-		Thread.sleep(7000);
+		WebElement clickPayUsingUPI11 = driver.findElement(By.xpath("//button[@data-testid='confirm-positive']"));
+		clickPayUsingUPI11.click();
 		
 		
-		WebDriverWait wait1 = new WebDriverWait(driver, java.time.Duration.ofMinutes(30));
-		WebElement rejectedMessage = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='CHECK PAYMENT STATUS']")));
+		WebDriverWait wait1 = new WebDriverWait(driver, java.time.Duration.ofMinutes(1));
+		WebElement rejectedMessage = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Payment could not be completed']")));
 	//	WebElement rejectedMessage = driver.findElement(By.xpath("//div[text()='Payment could not be completed']"));
 
 		if (rejectedMessage.isDisplayed()) {
@@ -874,6 +911,13 @@ public class Login extends BaseClass {
 			js.executeScript("arguments[0].style.border='2px solid red'", rejectedMessage);
 			System.err.println("Payment SuccessFul");
 		}
+
+		driver.switchTo().parentFrame();
+
+		driver.switchTo().defaultContent();
+		
+		
+		
 
 		
 		driver.close();
@@ -4813,10 +4857,10 @@ public class Login extends BaseClass {
 		WebElement element2 = driver.findElement(By.xpath("//iframe[contains(@src,'global')]"));
 
 		driver.switchTo().frame(element2);
-		WebElement element = driver.findElement(By.xpath("//li[text()='Global']"));
+		WebElement element = driver.findElement(By.xpath("(//a[contains(text(),'nCoins')])[1]"));
 		String text = element.getText();
 
-		if (text.equalsIgnoreCase("global")) {
+		if (text.equalsIgnoreCase("nCoins")) {
 			System.out.println("Verify the global page loaded Successfully");
 		} else {
 			System.out.println("Verify the global page is Not loaded");
