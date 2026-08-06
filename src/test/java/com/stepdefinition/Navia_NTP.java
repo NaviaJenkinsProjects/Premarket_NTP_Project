@@ -1649,14 +1649,14 @@ Thread.sleep(2000);
 			try {
 				
 				List<WebElement> elements = driver.findElements(By.xpath("//div[@class='tabs-panel is-active']//ancestor::div/span[@class='symbolsseries']"));
-				
+				Thread.sleep(1000);
 				for (WebElement webElement : elements) {
-					
+					Thread.sleep(1000);
 						webElement.click();
-						Thread.sleep(500);
+						Thread.sleep(1000);
 						WebElement element = driver.findElement(By.xpath("//button[contains(@class,'"+string+"')]"));
 						element.click();
-						Thread.sleep(500);
+						Thread.sleep(1000);
 						
 						
 						WebElement element2 = driver.findElement(By.xpath("//button[text()='BUY']"));
@@ -1791,23 +1791,46 @@ Thread.sleep(2000);
 				 js.executeScript("window.scrollBy(0,500);");
 				 js.executeScript("window.scrollBy(0,500);");
 				 
-				 WebElement i = driver.findElement(By.xpath("(//div[text()='Pending']//ancestor::div[contains(@class,'dhx_grid-row')]//descendant::span[@class='cntx_menu order_context'])[1]"));
-					g.moveToElement(i).perform();
-					Thread.sleep(1000); 
-					g.click(i).perform();
-					Thread.sleep(1000);   
+				 
+				 try {
+					
+					 
+					 try {
+						 
+						 WebElement i = driver.findElement(By.xpath("(//div[text()='Pending']//ancestor::div[contains(@class,'dhx_grid-row')]//descendant::span[@class='cntx_menu order_context'])[1]"));
+							g.moveToElement(i).click().perform();
+							Thread.sleep(1000); 
+						
+					} catch (Exception e2) {
+						
+						 js.executeScript("window.scrollBy(0,1000);");
+						 js.executeScript("window.scrollBy(0,1000);");
+						 
+						 WebElement i = driver.findElement(By.xpath("(//div[text()='Pending']//ancestor::div[contains(@class,'dhx_grid-row')]//descendant::span[@class='cntx_menu order_context'])[2]")); 
+						 js.executeScript("arguments[0].click();", i);
+						 
+					}
+					 
+					
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+				
+					
 					
 					JavascriptExecutor j1 = (JavascriptExecutor) driver;
 					
 					try {
 						
-						driver.findElement(By.xpath("(//span[text()='Modify'])[1]")).click();
+						WebElement element2 = driver.findElement(By.xpath("(//span[text()='Modify'])[1]"));
+						element2.click();
 						
 					} catch (Exception e2) {
 						
 						driver.switchTo().defaultContent();
 						WebElement elemet21 = driver.findElement(By.xpath("(//span[text()='Modify'])[1]"));
-						g.moveToElement(elemet21).doubleClick().perform();
+						g.moveToElement(elemet21).click().perform();
+						System.out.println("hi");
 						
 						
 					}
